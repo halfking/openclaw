@@ -348,8 +348,12 @@ export async function compactEmbeddedPiSessionDirect(
 
     if (!apiKeyInfo.apiKey) {
       if (apiKeyInfo.mode !== "aws-sdk") {
+        const zaiHint =
+          runtimeModel.provider === "zai"
+            ? " Ensure ZAI_API_KEY is available in the gateway process environment (for launchd installs, set it under EnvironmentVariables in ai.openclaw.gateway.plist and reload the service)."
+            : "";
         throw new Error(
-          `No API key resolved for provider "${runtimeModel.provider}" (auth mode: ${apiKeyInfo.mode}).`,
+          `No API key resolved for provider "${runtimeModel.provider}" (auth mode: ${apiKeyInfo.mode}).${zaiHint}`,
         );
       }
     } else {
