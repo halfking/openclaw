@@ -62,8 +62,15 @@ export function collectDurableServiceEnvVars(params: {
   env: Record<string, string | undefined>;
   config?: OpenClawConfig;
 }): Record<string, string> {
-  return {
+  const entries = {
     ...readStateDirDotEnvVars(params.env),
     ...collectConfigServiceEnvVars(params.config),
   };
+
+  // Keep launchd/systemd service env compatible with legacy z-ai key naming.
+  if (!entries.ZAI_API_KEY?.trim() && entries.Z_AI_API_KEY?.trim()) {
+    entries.ZAI_API_KEY = entries.Z_AI_API_KEY;
+  }
+
+  return entries;
 }

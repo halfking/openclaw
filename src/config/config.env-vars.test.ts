@@ -195,4 +195,15 @@ describe("config env vars", () => {
       ).toBe("from-config");
     });
   });
+
+  it("copies legacy Z_AI_API_KEY into durable ZAI_API_KEY for service installs", async () => {
+    await withTempHome(async (_home) => {
+      await writeStateDirDotEnv("Z_AI_API_KEY=legacy-zai-key\n", {
+        env: process.env,
+      });
+      const durable = collectDurableServiceEnvVars({ env: process.env });
+      expect(durable.Z_AI_API_KEY).toBe("legacy-zai-key");
+      expect(durable.ZAI_API_KEY).toBe("legacy-zai-key");
+    });
+  });
 });
