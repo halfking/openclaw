@@ -1,0 +1,10 @@
+{
+  "channels": {
+    "feishu": {
+      "appId": "cli_a903e32ce0f8dcd9",
+      "appSecret": "7Y23pjkgKc4o6hjO06FhhgGtju7z2jcf",
+      "enabled": true,
+      "connectionMode": "websocket"
+    }
+  }
+}

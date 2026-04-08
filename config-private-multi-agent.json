@@ -1,0 +1,381 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.4.1",
+    "lastTouchedAt": "2026-04-02T05:53:25.913Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-03-30T07:35:18.241Z",
+    "lastRunVersion": "2026.3.24",
+    "lastRunCommand": "doctor",
+    "lastRunMode": "local"
+  },
+  "logging": {
+    "level": "info",
+    "file": "${HOME}/.openclaw/logs/gateway.log"
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "zai-glm": {
+        "baseUrl": "https://open.bigmodel.cn/api/coding/paas/v4",
+        "apiKey": "010fdd188e244d45a397779e56f4eaf6.fmv9E3OOVwa8u68x",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "glm-5",
+            "name": "GLM-5 (智谱Coding)",
+            "api": "openai-completions",
+            "contextWindow": 128000,
+            "maxTokens": 8192,
+            "compat": {}
+          },
+          {
+            "id": "glm-4.7",
+            "name": "GLM-4.7 (智谱Coding)",
+            "api": "openai-completions",
+            "contextWindow": 128000,
+            "maxTokens": 8192,
+            "compat": {}
+          },
+          {
+            "id": "glm-4.7-flash",
+            "name": "GLM-4.7-Flash (智谱Coding)",
+            "api": "openai-completions",
+            "contextWindow": 128000,
+            "maxTokens": 8192,
+            "compat": {}
+          }
+        ]
+      },
+      "doubao": {
+        "baseUrl": "https://api.doubao.com/v1",
+        "apiKey": "bfd88554-6fc3-44df-9db9-a9e14e55b536",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "doubao-chat",
+            "name": "豆包 Chat",
+            "api": "openai-completions",
+            "compat": {},
+            "reasoning": false,
+            "input": ["text"],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 100000,
+            "maxTokens": 8192
+          }
+        ]
+      },
+      "maas-openai": {
+        "baseUrl": "http://maas-alb-678334952.ap-southeast-1.elb.amazonaws.com",
+        "apiKey": "sk-fpyYtPhOFC2udFRvhw5GtPCTmYR01TIpkPyMU7BR9RGRXQwo",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "gpt-5.4",
+            "name": "GPT-5.4 (MaaS)",
+            "api": "openai-completions",
+            "contextWindow": 128000,
+            "maxTokens": 16384,
+            "compat": {}
+          },
+          {
+            "id": "gpt-5",
+            "name": "GPT-5 (MaaS)",
+            "api": "openai-completions",
+            "contextWindow": 128000,
+            "maxTokens": 16384,
+            "compat": {}
+          },
+          {
+            "id": "gpt-5-mini",
+            "name": "GPT-5 Mini (MaaS)",
+            "api": "openai-completions",
+            "contextWindow": 128000,
+            "maxTokens": 16384,
+            "compat": {}
+          }
+        ]
+      },
+      "maas-claude": {
+        "baseUrl": "http://maas-alb-678334952.ap-southeast-1.elb.amazonaws.com/claude",
+        "apiKey": "sk-fpyYtPhOFC2udFRvhw5GtPCTmYR01TIpkPyMU7BR9RGRXQwo",
+        "api": "anthropic-messages",
+        "models": [
+          {
+            "id": "claude-sonnet-4-6",
+            "name": "Claude Sonnet 4.6 (MaaS)",
+            "api": "anthropic-messages",
+            "contextWindow": 200000,
+            "maxTokens": 8192,
+            "compat": {}
+          }
+        ]
+      },
+      "qiniu": {
+        "baseUrl": "https://api.qnaigc.com/v1",
+        "apiKey": "sk-940f8de6f69f2f068a9b2bfd3747e692edbe7de3399a76af713ac5b29c1b9de6",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "minimax/minimax-m2.5",
+            "name": "MiniMax M2.5 (7牛代理)",
+            "api": "openai-completions",
+            "contextWindow": 128000,
+            "maxTokens": 8192,
+            "compat": {}
+          }
+        ]
+      },
+      "deepseek": {
+        "baseUrl": "https://api.deepseek.com",
+        "apiKey": "sk-3becdb3b9f1c4ffa94b2f30dad4b95cb",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "deepseek-chat",
+            "name": "DeepSeek Chat",
+            "api": "openai-completions",
+            "compat": {},
+            "reasoning": false,
+            "input": ["text"],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          }
+        ]
+      },
+      "minimax": {
+        "baseUrl": "https://api.minimaxi.com/anthropic",
+        "apiKey": "sk-cp-bT8Qagnkbdo5xFil3rddP5GA7s31eSCd5ZrAvRroVu-M6fhZr21DHDmLx5h4SV-9Rd6dG40SdVp3XbUNLEGGIlYZuw3g33w1bmt5l99ESMyOS_gf-Ba1hvY",
+        "api": "anthropic-messages",
+        "models": [
+          {
+            "id": "MiniMax-M2.7",
+            "name": "MiniMax-M2.7",
+            "api": "anthropic-messages",
+            "reasoning": true,
+            "input": ["text"],
+            "cost": {
+              "input": 0.3,
+              "output": 1.2,
+              "cacheRead": 0.03,
+              "cacheWrite": 0.12
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192,
+            "compat": {}
+          }
+        ]
+      },
+      "zai": {
+        "apiKey": "010fdd188e244d45a397779e56f4eaf6.fmv9E3OOVwa8u68x",
+        "baseUrl": "https://open.bigmodel.cn/api/coding/paas/v4",
+        "api": "openai-completions",
+        "models": []
+      },
+      "deepseek2": {
+        "baseUrl": "https://api.deepseek.com",
+        "apiKey": "sk-58811410f8e94077ad47250e8d5aaba8",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "deepseek-chat",
+            "name": "DeepSeek Chat (key2)",
+            "api": "openai-completions",
+            "compat": {},
+            "reasoning": false,
+            "input": ["text"],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          }
+        ]
+      },
+      "synthetic": {
+        "baseUrl": "https://api.synthetic.new/anthropic",
+        "apiKey": "sk-dummy",
+        "api": "anthropic-messages",
+        "models": [
+          {
+            "id": "hf:google/gemini-3-flash-preview",
+            "name": "Gemini 3 Flash (Preview)",
+            "reasoning": false,
+            "input": ["text", "image"],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 1000000,
+            "maxTokens": 8192,
+            "compat": {}
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "github-copilot/gemini-3-flash-preview",
+        "fallbacks": ["zai/glm-5"]
+      }
+    },
+    "list": [
+      {
+        "id": "orchestrator",
+        "model": {
+          "primary": "github-copilot/gemini-3-flash-preview",
+          "fallbacks": ["zai/glm-5"]
+        }
+      }
+    ]
+  },
+  "tools": {
+    "profile": "coding",
+    "sessions": {
+      "visibility": "all"
+    },
+    "exec": {
+      "security": "full",
+      "ask": "off"
+    },
+    "web": {
+      "search": {
+        "enabled": true,
+        "apiKey": "BSAklm-CTe_TNK591el_fkYEUJrkvnX"
+      },
+      "fetch": {
+        "enabled": true
+      }
+    }
+  },
+  "bindings": [
+    {
+      "agentId": "dev-hephaestus",
+      "match": {
+        "channel": "feishu"
+      }
+    }
+  ],
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "channels": {
+    "feishu": {
+      "appId": "cli_a903e32ce0f8dcd9",
+      "appSecret": "7Y23pjkgKc4o6hjO06FhhgGtju7z2jcf",
+      "enabled": true,
+      "connectionMode": "websocket"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "controlUi": {
+      "allowedOrigins": [
+        "http://localhost:18789",
+        "http://127.0.0.1:18789",
+        "http://192.168.31.44:18789"
+      ]
+    },
+    "auth": {
+      "mode": "token",
+      "token": "${OPENCLAW_GATEWAY_TOKEN}"
+    },
+    "remote": {
+      "token": "${OPENCLAW_GATEWAY_TOKEN}"
+    },
+    "reload": {
+      "mode": "off"
+    }
+  },
+  "plugins": {
+    "allow": ["agent-control-registry", "kxmemory-memos-plugin", "feishu", "minimax"],
+    "entries": {
+      "agent-control-registry": {
+        "enabled": true,
+        "config": {
+          "wsUrl": "wss://acc.itestu.cn/openclaw",
+          "deviceName": "m4macbookpro",
+          "gatewayId": "m4macbookpro-gateway",
+          "standardRolesFile": "${OPENCLAWPLUGINS_DIR}/configs/devices/standard-agent-roles.json",
+          "deviceConfigsFile": "${OPENCLAWPLUGINS_DIR}/configs/devices/device-agent-overrides.json",
+          "employeesFile": "${OPENCLAWPLUGINS_DIR}/configs/devices/employees.json",
+          "heartbeatIntervalMs": 5000,
+          "dispatchPollIntervalMs": 30000,
+          "reconnectDelayMs": 10000,
+          "registrationSecret": "eee4ee00faabe7b22cea380f39f1b3de44dcbd18d324f6024985fd236d728247"
+        }
+      },
+      "kxmemory-memos-plugin": {
+        "enabled": true,
+        "config": {
+          "baseUrl": "https://m.itestu.cn",
+          "dashboardBaseUrl": "https://m.itestu.cn",
+          "userId": "openclaw-user",
+          "projectId": "kxmemory",
+          "role": "worker",
+          "recallEnabled": true,
+          "addEnabled": true,
+          "eventLoggingEnabled": false,
+          "captureStrategy": "full_session",
+          "memoryLimitNumber": 6,
+          "tags": ["openclaw", "m4macbookpro", "mobile"],
+          "timeoutMs": 10000,
+          "capabilities": [],
+          "dashboardApiKey": "sk-kx-5ce6dd9db5e5539aa1d34d70"
+        }
+      },
+      "feishu": {
+        "enabled": true
+      },
+      "minimax": {
+        "enabled": true
+      }
+    },
+    "installs": {
+      "agent-control-registry": {
+        "source": "path",
+        "sourcePath": "${HOME}/workspace/official-deploy/services/agent-control-center/openclaw-agent-control-registry",
+        "installPath": "${HOME}/.openclaw/extensions/agent-control-registry"
+      },
+      "kxmemory-memos-plugin": {
+        "source": "path",
+        "sourcePath": "${HOME}/workspace/official-deploy/services/kxmemory/openclaw-plugin",
+        "installPath": "${HOME}/.openclaw/extensions/kxmemory-memos-plugin"
+      }
+    }
+  },
+  "auth": {
+    "profiles": {
+      "github-copilot:github": {
+        "provider": "github-copilot",
+        "mode": "token"
+      }
+    }
+  }
+}
